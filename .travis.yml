@@ -8,47 +8,65 @@ matrix:
   - python: "2.7"
     services:
     - docker
-    env: TOX_ARGS="-e py27-install-extensions,py27-disable-extensions,py27-without-extensions"
+    env: 
+      - TOX_ARGS="-e py27-install-extensions,py27-disable-extensions,py27-without-extensions"
+      - CIBW_BUILD=cp27-*
   - python: "3.4"
     services:
     - docker
-    env: TOX_ARGS="-e py34-install-extensions,py34-disable-extensions,py34-without-extensions"
+    env: 
+      - TOX_ARGS="-e py34-install-extensions,py34-disable-extensions,py34-without-extensions"
+      - CIBW_BUILD=cp34-*
   - python: "3.4"
     services:
     - docker
     arch: arm64
-    env: TOX_ARGS="-e py34-install-extensions,py34-disable-extensions,py34-without-extensions"
+    env: 
+       - TOX_ARGS="-e py34-install-extensions,py34-disable-extensions,py34-without-extensions"
+       - cp34-manylinux_aarch64
   - python: "3.5"
     services:
     - docker
-    env: TOX_ARGS="-e py35-install-extensions,py35-disable-extensions,py35-without-extensions"
+    env: 
+      - TOX_ARGS="-e py35-install-extensions,py35-disable-extensions,py35-without-extensions"
+      - CIBW_BUILD=cp35-*
   - python: "3.5"
     services:
     - docker
     arch: arm64
-    env: TOX_ARGS="-e py35-install-extensions,py35-disable-extensions,py35-without-extensions"
+    env: 
+      - TOX_ARGS="-e py35-install-extensions,py35-disable-extensions,py35-without-extensions"
+      - cp35-manylinux_aarch64
   - python: "3.6"
     services:
     - docker
-    env: TOX_ARGS="-e py36-install-extensions,py36-disable-extensions,py36-without-extensions"
+    env: 
+      - TOX_ARGS="-e py36-install-extensions,py36-disable-extensions,py36-without-extensions"
+      - CIBW_BUILD=cp36-*
   - python: "3.6"
     services:
     - docker
     arch: arm64
-    env: TOX_ARGS="-e py36-install-extensions,py36-disable-extensions,py36-without-extensions"
+    env: 
+      - TOX_ARGS="-e py36-install-extensions,py36-disable-extensions,py36-without-extensions"
+      - cp36-manylinux_aarch64
   - python: "3.7"
     services:
     - docker
     dist: xenial
     sudo: true
-    env: TOX_ARGS="-e py37-install-extensions,py37-disable-extensions,py37-without-extensions"
+    env: 
+      - TOX_ARGS="-e py37-install-extensions,py37-disable-extensions,py37-without-extensions"
+      - CIBW_BUILD=cp37-*
   - python: "3.7"
     services:
     - docker
     arch: arm64
     dist: xenial
     sudo: true
-    env: TOX_ARGS="-e py37-install-extensions,py37-disable-extensions,py37-without-extensions"
+    env: 
+      - TOX_ARGS="-e py37-install-extensions,py37-disable-extensions,py37-without-extensions"
+      - cp37-manylinux_aarch64
   - python: "pypy3"
     env: TOX_ARGS="-e pypy-without-extensions"
 install:
