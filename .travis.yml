@@ -34,7 +34,7 @@ matrix:
   - python: "pypy3"
     env: TOX_ARGS="-e pypy-without-extensions"
 install:
-  - pip install tox coveralls wheel cibuildwheel==1.5.2
+  - pip install tox coveralls wheel cibuildwheel
 script:
   - tox $TOX_ARGS
   - cibuildwheel --output-dir dist
